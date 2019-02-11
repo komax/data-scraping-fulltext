@@ -17,9 +17,14 @@ searchResults <- ft_search(query = "ecology AND biology",
 # Download the abstracts from these articles.
 abstractsPlosArticles <- ft_abstract(plosDios, from = "plos")
 
-# Output the abstract of the first article
+# Output the abstract of the first article.
 firstArticle <- abstractsPlosArticles$plos[[1]]
 print(firstArticle$doi)
 print(firstArticle$abstract)
 
+# Download the articles.
+downloadedPapers <- ft_get(plosDios, from = "plos")
 
+# Extract the entire text.
+fullTextArticle <- ft_extract(downloadedPapers)
+print(fullTextArticle)
