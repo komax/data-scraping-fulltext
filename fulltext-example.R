@@ -5,7 +5,7 @@
 #install.packages(fulltext)
 
 # Then load the package.
-libary(fulltext)
+library(fulltext)
 
 # Search in these journals and store the dois in a dataframe.
 searchResults <- ft_search(query = "ecology AND biology",
@@ -28,3 +28,4 @@ downloadedPapers <- ft_get(plosDios, from = "plos")
 # Extract the entire text.
 fullTextArticle <- ft_extract(downloadedPapers)
 print(fullTextArticle)
+
